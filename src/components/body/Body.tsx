@@ -1,14 +1,19 @@
-export const Body=()=>{
-    return (
-        <div  className="body">
-             <h1>Corps de page</h1>
-        <p className="espaceText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae expedita repudiandae, porro cumque sequi delectus in dolores nobis vel. Distinctio nesciunt ad eaque tempora quasi ipsum doloremque itaque expedita obcaecati?
-        Eveniet distinctio nostrum ex tenetur, ut doloremque doloribus, corporis maiores accusamus inventore aperiam a, nihil odit repellendus possimus facilis quae soluta commodi exercitationem quasi perspiciatis consequuntur beatae? Cupiditate, laborum inventore.
-        Est maiores, sit voluptatibus animi blanditiis accusamus architecto asperiores ipsum quod impedit delectus nisi deserunt velit eum adipisci aliquid aut, earum magnam ea assumenda sequi. Magni inventore saepe eos esse!
-        Atque praesentium illum maiores esse placeat repellat voluptatem dignissimos, a reiciendis, rem molestias eius quibusdam voluptatibus iure, consequatur sit alias delectus quasi modi ut odio dolores. Quasi magnam dolorem voluptate.
-        Minima magni nostrum aliquid, quidem odit repudiandae eos pariatur provident doloribus sapiente cumque repellat quia debitis harum vel recusandae totam illo? Reiciendis sunt eaque quas saepe ipsa cum, corporis quisquam? ipsum, dolor sit amet consectetur adipisicing elit. Ipsa et in porro adipisci autem modi nam, voluptates ipsum officiis! Temporibus architecto impedit distinctio, quidem ipsam necessitatibus fugit officia perferendis at!orem*5
-             </p>
-        </div>
-        
-    );
-}
+export const Body = () => {
+  return (
+    <div className="body">
+      <h1>Corps de page</h1>
+      <p className="espaceText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque,
+        ex, repudiandae expedita qui porro ipsa aspernatur sequi placeat aperiam
+        fugit ducimus quam praesentium incidunt quae, neque quod nobis! Iure.
+        Velit esse nostrum recusandae voluptatibus aperiam, sit asperiores,
+        ullam non ab laudantium, veritatis quos necessitatibus? Accusamus
+        tempora mollitia odio qui vero. Numquam odio obcaecati adipisci ullam
+        ducimus similique corporis ea. Deserunt eum sint tenetur ducimus
+        mollitia quod atque necessitatibus ad non modi fugit tempora pariatur
+        sit nam, odio maxime aliquam. At, quaerat totam. Cupiditate itaque
+        inventore ipsum quod, odit ipsam!
+      </p>
+    </div>
+  );
+};
