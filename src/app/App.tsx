@@ -1,24 +1,17 @@
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "../LoginPage";
+import FirstPage from "../FirstPage";
 
-import './App.css'
-import { Footer } from '../components/footer/Footer'
-
-import { Header } from '../components/header/Header'
-import { NavBar } from '../components/navBar/NavBar'
-import {Body} from '../components/body/Body'
-
-function App() {
-  
-
+const App = () => {
   return (
-    <div className='app'>
-      <Header/>
-      <div className="main">
-      <NavBar/>
-      <Body/>
-      </div>
-      <Footer/>
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/firstpage" element={<FirstPage />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
