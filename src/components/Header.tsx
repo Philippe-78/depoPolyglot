@@ -1,6 +1,5 @@
-import React from "react";
 
-//export function Header(){}
+
 export const Header=()=>{
     return (
         <div className="header">
