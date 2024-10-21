@@ -3,7 +3,7 @@
 export const Body = () => {
   return (
     <div className="body">
-      <h1>Corps de page</h1>
+      <h1>Corps de la page</h1>
       <p className="espaceText">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque,
         ex, repudiandae expedita qui porro ipsa aspernatur sequi placeat aperiam
