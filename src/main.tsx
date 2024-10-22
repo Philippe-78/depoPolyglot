@@ -6,9 +6,9 @@ import './index.css'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <>
-    <div className="main">
-    <App />
-    </div>
+     <div className="app">   
+        <App />
+    </div> 
     </>
   </StrictMode>,
 )

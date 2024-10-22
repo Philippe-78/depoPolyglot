@@ -1,33 +1,37 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 const LoginPage = () => {
-  const [formData, setFormData] = useState({ name: "", email: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
   const navigate = useNavigate();
 
-  //Gestion de la soumssion du formulaire
+  // Gestion de la soumission
   const handleSubmit = (e) => {
-    e.preventDefault(); //emp^che le rechargement de la page
+    e.preventDefault(); // Empêche le rafraîchissement de la page
     console.log(formData);
 
-    // redirection vers la Page2
+    // Redirection vers la première page
     navigate("/firstpage");
   };
-  //gestion du changement dans les champs du formulaire
+
+  // Gestion du changement de formulaire
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  return (<>
-    <div className="header">
+
+  return (
+    <div>
       <Header />
-    </div>
-    <div className="main">
-      <h1> LoginPage -Formulaire</h1>
+
+      <h1> LoginPage - Formulaire </h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Nom:    </label>
+          <label>Nom:</label>
           <input
             type="text"
             name="name"
@@ -35,7 +39,9 @@ const LoginPage = () => {
             onChange={handleChange}
             required
           />
+          <br />
         </div>
+        <br />
         <div>
           <label>Email :</label>
           <input
@@ -46,14 +52,12 @@ const LoginPage = () => {
             required
           />
         </div>
-        <button type="submit">Envoyer</button>
+        <br />
+        <button type="submit">Soumettre</button>
       </form>
-      </div>
-      <div className = "footer">
       <Footer />
-      </div>
-    
-    </>
+    </div>
   );
 };
+
 export default LoginPage;

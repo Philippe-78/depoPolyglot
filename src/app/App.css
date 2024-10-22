@@ -44,8 +44,8 @@
  .app {
   display: flex;
   flex-direction: column;
-  height: 100vh; 
-} 
+  height: auto; 
+  } 
 .main{
   
   display: flex;
@@ -66,6 +66,7 @@
   margin: 10px; /* Espacement de 20 pixels vers la droite */
   padding: 20px;
 }
+
 .body{
   width:70%;
   background-color:  #f2f2f2;
