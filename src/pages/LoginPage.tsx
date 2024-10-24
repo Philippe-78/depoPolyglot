@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import  Header  from "../components/header/Header";
+import  Footer  from "../components/footers/Footer";
+import NavBar from "../components/navBar/NavBar";
+import { useState } from "react";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    // email: "",
   });
   const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ const LoginPage = () => {
   return (
     <div>
       <Header />
-
+      <NavBar />
       <h1> LoginPage - Formulaire </h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -42,17 +44,17 @@ const LoginPage = () => {
           <br />
         </div>
         <br />
-        <div>
+        {/* <div>
           <label>Email :</label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            required
-          />
-        </div>
-        <br />
+            required */}
+          {/* /> */}
+        {/* </div>
+        <br /> */}
         <button type="submit">Soumettre</button>
       </form>
       <Footer />
