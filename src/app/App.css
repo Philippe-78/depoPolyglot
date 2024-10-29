@@ -40,47 +40,58 @@
 .read-the-docs {
   color: #888;
 } */
-
- .app {
+/**********************************************************************/
+  .app {
+    background-color: grey;
   display: flex;
   flex-direction: column;
-  height: auto; 
-  } 
-.main{
+   height: auto;
+   
+  }
+/* .main{
   
   display: flex;
-  flex: 1; /* Pour remplir l'espace restant à côté du navbar */
-  
-}
+  flex: 1; /* Pour remplir l'espace restant à côté du navbar
+  width:70%;
+  background-color:  #f2f2f2;
+  border: 2px solid gold; /* Ajout d'un cadre de couleur or 
+  padding: 10px;
+  margin: 10px;
+ }
+ 
 
 .header {
   height: 10%;
   color: white;
   background-color: #333;
 }
+/* .header h1{
+  height: 10%;
+  color: rgb(219, 25, 25);
+  background-color: #333;
+} */
 
-.navBar{
+/* .navbar{
   width:30%;
   background-color:  #f2f2f2;
-  border: 2px solid gold; /* Ajout d'un cadre de couleur or */
-  margin: 10px; /* Espacement de 20 pixels vers la droite */
+  border: 2px solid gold; /* Ajout d'un cadre de couleur or 
+  margin: 10px; /* Espacement de 20 pixels vers la droite 
   padding: 20px;
-}
-
-.body{
-  width:70%;
-  background-color:  #f2f2f2;
-  border: 2px solid gold; /* Ajout d'un cadre de couleur or */
-  padding: 10px;
-  margin: 10px;
-}
-.espaceText{
+} */
+/* .main{ */
+  /* width:70%; */
+  /* background-color:  #f2f2f2; */
+ 
+  /* padding: 10px; */
+  /* margin: 10px; */
+/* } */
+/* .espaceText{
   text-align: justify;
-  color:blue
+  color:blue 
   
-}
-.footer {
-  height: 10%;
-  background-color: #333;
-  color: white;
-}
+} */
+/* .footer { */
+  /* height: 10%; */
+  /* background-color: #333; */
+  /* color: white; */
+/* }  */
