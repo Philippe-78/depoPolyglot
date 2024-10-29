@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
 
+const NavBar = () => {
+  return (
+    <>
+      <button>
+        <Link to="/">LoginPage</Link>
+      </button>
+      <button>
+        <Link to="/firstpage">WorkingPage</Link>
+      </button>
+    </>
+  );
+};
 
-
-const NavBar=()=>{
-    return(
-        <><button>LoginPage</button>
-        <button>WorkingPage</button></>
-       
-    );
-  };
-
-  export default NavBar
+export default NavBar;

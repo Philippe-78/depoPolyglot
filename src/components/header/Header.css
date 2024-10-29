@@ -3,9 +3,10 @@
   color: whithe;
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
   align-items: center;
-  width: 100%; 
+  width: 98%;
+  height: 20%; 
   top: 0;
  /* position: fixed;*/
  /* /z-index: 1000; */
@@ -13,7 +14,9 @@
 
 .header h1{
     color:orange;
-    
-    
+}
+
+.header img{
+  width:  10%;
 }
 
