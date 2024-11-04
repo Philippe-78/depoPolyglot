@@ -1,0 +1,34 @@
+.header {
+  background-color: #444444;
+  color: orange;
+  padding: 0.5rem;
+  display:flex;
+  /* flex:1; */
+  height:12vh;
+  width:80vw;
+  display: flex;
+  justify-content: space-between; /* Pour répartir les éléments de façon égale */
+  align-items: center;
+  margin:auto;
+  top: 0;
+  /* position: fixed; */
+  z-index: 1000;
+}
+
+.header img {
+  width: 10%;
+  margin-right: 3rem;
+  padding-left: 30px; /* Ajoute un espace à droite de l'image */
+}
+
+.header h1 {
+  text-align: center;
+  margin: 0;  /* Centre le titre */
+}
+
+.userHeader {
+  margin-left: auto; /* Place les éléments du useContext à droite */
+  margin-right: 1rem; /* Ajoute de l'espace à droite des éléments du useContext */
+  color: white;
+  line-height: 0;
+}

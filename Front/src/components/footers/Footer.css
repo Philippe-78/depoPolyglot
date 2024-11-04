@@ -1,0 +1,20 @@
+.footer{
+    background-color : #444444;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    position:relative;
+    height:10vh;
+    width:79vw;
+    margin:auto;
+    bottom:0;
+    left: 0;
+    color:orange;
+    margin-top: 1rem;
+    border-top:1px solid #ddd;
+    /*position: absolute;*/
+}
+
+.footer.p{
+    margin:0;
+}
