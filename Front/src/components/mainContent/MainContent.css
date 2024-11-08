@@ -1,17 +1,12 @@
-
-
 .maincontent {
   background-color: gray;
-  display:flex;
-    /* flex:1; */
-    height:55vh;
-    width:78vw;
+  display: flex;
+  /* flex:1; */
+  height: 55vh;
+  width: 78vw;
   border: 2px solid orange; /* Ajout d'un cadre de couleur or */
   padding: 15px;
-  margin :auto;
+  margin: auto;
   margin-top: auto;
   margin-left: auto;
 }
-
-
-
