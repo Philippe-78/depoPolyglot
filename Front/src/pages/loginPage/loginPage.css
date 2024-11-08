@@ -1,0 +1,16 @@
+.login {
+    
+    background-color: #444444;
+    /* display:flex;
+    flex:1; */
+    height:45vh;
+    width:80vw;
+    border: 2px solid orange; /* Ajout d'un cadre de couleur or */
+    padding: 15px;
+    margin-bottom: 10px;
+    margin:auto
+  }
+
+  .login h1{
+    color:orange;
+  }
