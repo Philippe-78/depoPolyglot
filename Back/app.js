@@ -36,6 +36,47 @@ app.post('/addTasks',async(req,res)=>{
   }
 });
 
+app.post('/updateTask/:taskId',async (req,res)=>{
+  const taskId=req.params.taskId;
+  try{
+    const updatedTask=await Task.findByIdAndUpdate(
+      taskId,
+      {
+         francais:'tabac',
+         anglais: 'tabaco'
+        },
+      { new: true }
+    );
+
+    if(!updatedTask){
+      return res.status(404).json({error:'Task not found'});
+    }
+
+    console.log('Task updated:', updatedTask);
+    res.status(200).json(updatedTask);
+  } catch (error){
+  console.error('Error updating task:', error);
+  res.status(500).json({ error: 'Failed to update task'});
+  }
+});
+
+app.delete('/deleteTask/:taskId',async(req,res)=>{
+  const taskId= req.params.taskId;
+  try{
+    const deletedTask=await Task.findByIdAndDelete(taskId);
+
+    if(!deletedTask){
+      return res.status(404).json({error:'Task not found'});
+    }
+  
+  console.log('Task deleted:', deletedTask);
+  res.status(200).json({message:'Task deleted successfully'});
+  } catch(error){
+    console.error('Error deleting task:', error);
+    res.status(500).json({error: 'Failed to delete task'});
+  }
+});
+
 app.listen(port, () => {
   console.log("Serveur en cours d'exécution sur le Port : "+ port );
 })
