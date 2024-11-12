@@ -3,6 +3,22 @@ const app = express();
 const bodyParser=require('body-parser');
 const mongoose = require("mongoose");
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Remplacez par l'URL de votre application front-end
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
+// Répondre aux requêtes préalables (OPTIONS)
+app.options('/addTasks', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Remplacez par l'URL de votre application front-end
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.status(200).send();
+});
+
+
 app.use(bodyParser.json());
 
 const Task=require('./Task.model');
@@ -19,12 +35,12 @@ app.get('/tasks', async(req,res)=>{
 });
 
 app.post('/addTasks',async(req,res)=>{
-
+const{francais,anglais}=req.body;
   try{
     const newTask=new Task({
-      francais: 'mot',
-      anglais: 'word'
-    })
+      francais: francais,
+      anglais: anglais
+    });
     console.log('Après la création de la nouvelle tâche');
     const savedTask=await newTask.save();
 
