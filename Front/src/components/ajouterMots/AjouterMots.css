@@ -1,0 +1,9 @@
+.form-group {
+    margin-bottom: 10px; /* Ajoute de l'espace en bas de chaque groupe */
+    display: flex; /* Utilise la disposition flexbox pour aligner les éléments horizontalement */
+    align-items: center; /* Aligne verticalement les éléments au centre */
+  }
+  .form-group label {
+    margin-right: 10px; /* Ajoute de l'espace à droite du libellé */
+    width: 150px; /* Définit une largeur fixe pour le libellé */
+  }
