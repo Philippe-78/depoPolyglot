@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 // Répondre aux requêtes préalables (OPTIONS)
 app.options('/addTasks', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // Remplacez par l'URL de votre application front-end
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Methods', 'POST,DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.status(200).send();
 });
@@ -25,26 +25,39 @@ const Task=require('./Task.model');
 
 const port = 8080;
 
-mongoose.connect('mongodb://localhost:27017/todolistapp');
+mongoose.connect('mongodb://localhost:27017/todolistapp')
+.then(() => {
+  console.log('Connected to MongoDB');
+})
+.catch((err) => {
+  console.error('Error connecting to MongoDB', err);
+});
+
 
 app.get('/tasks', async(req,res)=>{
+  try{
   console.log("getting all words");
-  let data=await Task.find({})
+  let data=await Task.find({}).select('francais anglais type')
   console.log(data);
   res.json(data);
+}catch(error){
+  console.error('Erreur getting all words:', error);
+  res.status(500).json({error:'failed to get all words', specificError:error.message});
+}
 });
 
 app.post('/addTasks',async(req,res)=>{
-const{francais,anglais}=req.body;
+  console.log(req.body);
+const{francais,anglais,type}=req.body;
   try{
     const newTask=new Task({
       francais: francais,
-      anglais: anglais
+      anglais: anglais,
+      type:type
     });
-    console.log('Après la création de la nouvelle tâche');
-    const savedTask=await newTask.save();
+       const savedTask=await newTask.save();
 
-    console.log(savedTask);
+   
     res.status(201).json(savedTask);
   } catch (error) {
     console.error('Error adding task:', error);
@@ -76,20 +89,16 @@ app.post('/updateTask/:taskId',async (req,res)=>{
   }
 });
 
-app.delete('/deleteTask/:taskId',async(req,res)=>{
-  const taskId= req.params.taskId;
-  try{
-    const deletedTask=await Task.findByIdAndDelete(taskId);
-
-    if(!deletedTask){
-      return res.status(404).json({error:'Task not found'});
+app.delete('/deleteTask/:francais', async (req, res) => {
+  try {
+    const deletedTask = await Task.findOneAndDelete({ francais: req.params.francais });
+    if (deletedTask) {
+      res.status(200).json({ message: 'Task deleted successfully' });
+    } else {
+      res.status(404).json({ message: 'Task not found' });
     }
-  
-  console.log('Task deleted:', deletedTask);
-  res.status(200).json({message:'Task deleted successfully'});
-  } catch(error){
-    console.error('Error deleting task:', error);
-    res.status(500).json({error: 'Failed to delete task'});
+  } catch (err) {
+    res.status(500).json({ message: 'Error deleting task', error: err });
   }
 });
 

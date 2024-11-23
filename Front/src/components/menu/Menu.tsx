@@ -16,6 +16,7 @@ export const Menu:React.FC<MenuProps> = ({onOptionSelect}) => {
         <li onClick={()=>onOptionSelect("Ajouter des mots")}>Ajouter des mots</li>
         <li onClick={()=>onOptionSelect("Modifier des mots")}>Modifier des mots</li>
         <li onClick={()=>onOptionSelect("Consulter les mots")}>Consulter les mots</li>
+        <li onClick={()=>onOptionSelect("Effacer un mot")}>Effacer un mot</li>
        
       </ul>
 
